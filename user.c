@@ -66,11 +66,11 @@ void configureTimer(void){
     TMR2 = 0x00;
         
     /* timer period value Period Register 2 && 3 */
-/* Ftimer = FCY/8 = 1MHz  ;  Ttimer = 1/1MHz = 1us  ;  The 7 segement display will refresh every 50ms = 20Hz ==> 20ms/1us = 20 0000  ;   maxCycles = 2^32  ;
+/* Ftimer = FCY/8 = 5MHz  ;  Ttimer = 1/5MHz = 0.2us  ;  The 7 segement display will refresh every 50ms = 20Hz ==> 20ms/0.2us = 100 0000  ;   maxCycles = 2^32  ;
  * 2x7segment display, so for each displays to be refreshed every 20ms, we need to generate interupts each 20ms/2 = 10ms ==> 10ms/1us = 10 0000 */
     
     /* Load the period value */
-    PR2 = 30000;        
+    PR2 = 50000;        
     
     /* Clear Timer2 Interrupt Flag */
     IFS0bits.T2IF = 0;
