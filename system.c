@@ -40,5 +40,28 @@ __builtin functions.*/
 
 void ConfigureOscillator(void)
 {
+    /* Disable Watch Dog Timer */
+    RCONbits.SWDTEN = 0;
+    
+    /* 16MHz/2 = 8MHz   ;   8MHz*20=160MHz   ;   160MHz/2=80MHz */
+    
+    /* PLL VCO Output Divider Select bits (also denoted as ?N2?, PLL postscaler) */
+    CLKDIVbits.PLLPOST = 0;         // Output/2
+    
+    /* PLL Phase Detector Input Divider bits (also denoted as ?N1?, PLL prescaler) */
+    CLKDIVbits.PLLPRE  = 0;         // Input/2
+    
+    /* PLL Feedback Divisor bits (also denoted as ?M?, PLL multiplier) */
+    PLLFBDbits.PLLDIV = 18;          // Minimum value of the multiplier is set to 2 and corresponds to bit 0, so in order to receive a multiplied by 20
+                                     // we need to write a value of 18
+
+    /* When clock switch occurs switch to Primary Osc (HS, XT, EC) */
+    __builtin_write_OSCCONH(0x03);  /* Set OSCCONH for clock switch */
+    __builtin_write_OSCCONL(0x01);  /* Start clock switching */
+    while(OSCCONbits.COSC != 0b011);
+
+    /* Wait for Clock switch to occur */
+    /* Wait for PLL to lock, only if PLL is needed */
+    while(OSCCONbits.LOCK != 1);
 }
 

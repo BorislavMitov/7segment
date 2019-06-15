@@ -70,7 +70,7 @@ void configureTimer(void){
  * 2x7segment display, so for each displays to be refreshed every 20ms, we need to generate interupts each 20ms/2 = 10ms ==> 10ms/1us = 10 0000 */
     
     /* Load the period value */
-    PR2 = 10000;        
+    PR2 = 30000;        
     
     /* Clear Timer2 Interrupt Flag */
     IFS0bits.T2IF = 0;
