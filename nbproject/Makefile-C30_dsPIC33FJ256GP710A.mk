@@ -89,8 +89,8 @@ ifneq ($(INFORMATION_MESSAGE), )
 endif
 	${MAKE}  -f nbproject/Makefile-C30_dsPIC33FJ256GP710A.mk dist/${CND_CONF}/${IMAGE_TYPE}/7seg.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
-MP_PROCESSOR_OPTION=33FJ256GP710A
-MP_LINKER_FILE_OPTION=,--script=p33FJ256GP710A.gld
+MP_PROCESSOR_OPTION=33FJ32MC204
+MP_LINKER_FILE_OPTION=,--script=p33FJ32MC204.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
