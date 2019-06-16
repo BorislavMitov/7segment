@@ -73,7 +73,6 @@ int16_t main(void)
     
     while(1)
     {
-        
         /* Put the device into IDLE mode */
         asm("PWRSAV #0x0001");
     }
