@@ -159,7 +159,7 @@ void __attribute__((interrupt,auto_psv)) _CNInterrupt(void)
 {
     /* Clear Timer2 Interrupt Flag */
     IFS0bits.T2IF = 0;
-
+    
     /* Switch on the first 7 segment display and switch off the second display */
     if( 0 == i){
         /* The first display is connected to RC9 port */

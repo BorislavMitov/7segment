@@ -60,7 +60,7 @@ void configureTimer(void){
     T2CONbits.TGATE = 0;
     
     /*  Select 1:8 Prescaler */
-    T2CONbits.TCKPS = 0b11;
+    T2CONbits.TCKPS = 0b01;
     
     /* Clear timer register */
     TMR2 = 0x00;
@@ -70,7 +70,7 @@ void configureTimer(void){
  * 2x7segment display, so for each displays to be refreshed every 20ms, we need to generate interupts each 20ms/2 = 10ms ==> 10ms/1us = 10 0000 */
     
     /* Load the period value */
-    PR2 = 50000;
+    PR2 = 10000;
     
     /* Clear Timer2 Interrupt Flag */
     IFS0bits.T2IF = 0;

@@ -80,11 +80,11 @@ Program Memory  [Origin = 0x200, Length = 0x5600]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x59e           0x86d  (2157)
-.text                        0x79e               0x460           0x690  (1680)
-.dinit                       0xbfe                 0x8             0xc  (12)
-.text                        0xc06                 0x6             0x9  (9)
+.text                        0x79e               0x462           0x693  (1683)
+.dinit                       0xc00                 0x8             0xc  (12)
+.text                        0xc08                 0x6             0x9  (9)
 
-                 Total program memory used (bytes):          0xf12  (3858) 11%
+                 Total program memory used (bytes):          0xf15  (3861) 11%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0xfc]
@@ -179,14 +179,14 @@ External Symbols in Program Memory (by address):
                   0x000bbe                  _InitApp
                   0x000bc8                  _ConfigureInterrupts
                   0x000bda                  _configureTimer
-                  0x000c06                  _ConfigureOscillator
+                  0x000c08                  _ConfigureOscillator
                   0xf80000                  __FBS.sec
                   0xf80004                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
                   0x000bc8                  _ConfigureInterrupts
-                  0x000c06                  _ConfigureOscillator
+                  0x000c08                  _ConfigureOscillator
                   0x000bbe                  _InitApp
                   0x00076e                  __AddressError
                   0x000786                  __AltAddressError
@@ -1204,17 +1204,17 @@ __c30_signature
  .aivt._AltMathError
                   0x00010c          0x2 build/C30_dsPIC33FJ256GP710A/production/traps.o
 
-.text             0x00079e        0x460
+.text             0x00079e        0x462
  .text            0x00079e        0x420 build/C30_dsPIC33FJ256GP710A/production/main.o
                   0x00079e                  _main
- .text            0x000bbe         0x40 build/C30_dsPIC33FJ256GP710A/production/user.o
+ .text            0x000bbe         0x42 build/C30_dsPIC33FJ256GP710A/production/user.o
                   0x000bbe                  _InitApp
                   0x000bc8                  _ConfigureInterrupts
                   0x000bda                  _configureTimer
 
-.dinit            0x000bfe          0x8
- .dinit           0x000bfe          0x8 data_init
+.dinit            0x000c00          0x8
+ .dinit           0x000c00          0x8 data_init
 
-.text             0x000c06          0x6
- .text            0x000c06          0x6 build/C30_dsPIC33FJ256GP710A/production/system.o
-                  0x000c06                  _ConfigureOscillator
+.text             0x000c08          0x6
+ .text            0x000c08          0x6 build/C30_dsPIC33FJ256GP710A/production/system.o
+                  0x000c08                  _ConfigureOscillator
